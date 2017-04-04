@@ -1,0 +1,195 @@
+/* slider style */
+
+.carousel-content{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 150px;
+    background-color: #fff;
+    color: #1D2938;
+    position: relative;
+    border: 1px solid #000;
+}
+.image-explorer-main{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    background-color: #FCFEFF;
+    position: relative;
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 95%,rgba(0,0,0,.05)),linear-gradient(#FCFEFF,#FCFEFF);
+}
+.image-view{
+    width: auto;
+    height: auto;
+    max-width: 550px;
+    min-height: 220px;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 1px solid #000;
+    position: relative;
+    padding: 5px;
+}
+.image-view img{
+    width: 100%;
+    height: 100%;
+}
+.navigation{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+.nav-btn{
+    width: auto;
+    height: auto;
+    margin: 20px;
+    text-align: center;
+    display: block;
+}
+.nav-btn span{
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    padding: 10px 15px;
+    font-size: 24px;
+    border: 2px solid rgba(28,40,56,.25);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* image explorer meta section */
+.image-explorer-meta{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 1px solid #000;
+}
+.image-explorer-meta .thumb-details{
+    width: auto;
+    height: auto;
+    max-height: 330px;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.wrap-header{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px;
+    border-bottom: 1px solid #EDEFF0;
+}
+.wrap-header h3{
+    display: inline-block;
+    margin-bottom: 0px;
+    font-size: 16px;
+    color: #1D2938;
+}
+.wrap-header .settings{
+    float: right;
+    display: inline;
+    color: #009CFF;
+    font-size: 14px;
+    margin-top: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.image-explorer-meta .title-bar{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px 0 5px 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+.image-explorer-meta .thumbs-features, .image-explorer-meta .thumbs-type, .image-explorer-meta .thumbs-clr{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px;
+    border-bottom: 1px solid #EDEFF0;
+}
+.image-explorer-meta .features-list, .image-explorer-meta .type-list, .image-explorer-meta .clr-list{
+    margin: 0 auto;
+    padding: 15px 0;
+}
+.image-explorer-meta .features-list li, .image-explorer-meta .type-list li{
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 2px 16px 0;
+    box-shadow: inset  0 0 15px rgba(29,41,56,.15);
+    font-weight: 500;
+    border-radius: 20px;
+    display: flex;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 0 15px 15px 0;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}    
+.image-explorer-meta .clr-list li{
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 2px 16px 0;
+    box-shadow: 0 0 0 2px rgba(29,41,56,.15);
+    font-weight: 500;
+    display: flex;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 0 15px 15px 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}    
+.flex-direction-nav a{
+    height: 50px;
+}
+
+/* slider strip */
+.carousel-strip{
+    width: auto;
+    height: auto;
+    min-height: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px solid #000;
+    padding: 0 90px;
+}
+.carousel-strip-items{
+    width: auto;
+    height: auto;
+    max-width: 960px;
+    margin: 12px 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 2px;
+}
+.carousel-strip-items li.strip-img{
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+    padding: 2px;
+    flex: 0 0 auto;
+    line-height: 0;
+    list-style-type: none;
+    box-sizing: content-box;
+}
+.carousel-strip-items li.strip-img img{
+    width: 100%;
+    height: 100%;
+}
