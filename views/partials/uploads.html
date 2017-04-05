@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="wrap-flex">
+            <simple-image-gallery images="attachments"></simple-image-gallery>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="wrap-details">
+            <div class="col-md-6">
+                <div class="thumb-details">
+                    <div class="thumbs-clr">
+                        <div class="title-bar">
+                            <span>Color</span>
+                        </div>
+                        <ul class="clr-list">
+                            <li ng-repeat="x in colors" style="background-color:{{x.color_code}};"></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="thumb-details">
+                    <div class="thumbs-features">
+                        <div class="title-bar">
+                            <span>GENERAL-V1.3</span>
+                        </div>
+                        <ul class="features-list">
+                            <li ng-repeat="imgName in tags">{{imgName.tag_code}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="wrap-uploader">
+            <div class="">
+                <input type="file" nv-file-select="" uploader="uploader"/>
+            </div>
+            <div>
+                <div>
+                    Queue progress:
+                    <div class="progress" style="">
+                        <div class="progress-bar" role="progressbar" ng-style="{'width': uploader.progress + '%' }"></div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                    <span class="glyphicon glyphicon-upload"></span> Upload
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

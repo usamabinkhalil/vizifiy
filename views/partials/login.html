@@ -1,24 +1,39 @@
 <div class="fh5co-contact animate-box fadeInUp animated">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
+        <div class="row margin">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 " >
                 <form ng-submit="login()" name="loginForm" id="login-form" method="post" role="form" >
-                    <div ng-class="{ 'has-success': !error['username'] && submitted,
+<!--                     <div ng-class="{ 'has-success': !error['username'] && submitted,
                 'has-error': error['username'] && submitted }"
                          class="form-group field-loginform-username required">
                         <label class="control-label" for="loginform-username">Username</label>
                         <input ng-model="userModel.username" type="text" id="loginform-username" class="form-control">
                         <p class="help-block help-block-error">{{ error['username']}}</p>
-                    </div>
-                    <div ng-class="{ 'has-success': !error['password'] && submitted,
+                    </div> -->
+                    <div class="form-group input-group input-group-lg field-loginform-username required " ng-class="{ 'has-success': !error['username'] && submitted,
+                'has-error': error['username'] && submitted }">
+                      <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                      <input ng-model="userModel.username" type="text" id="loginform-username" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
+                      
+                    </div> 
+                     <p class="help-block help-block-error ">{{ error['username']}}</p>
+<!--                     <div ng-class="{ 'has-success': !error['password'] && submitted,
                 'has-error': error['password'] && submitted }"
                          class="form-group field-loginform-password required">
                         <label class="control-label" for="loginform-password">Password</label>
                         <input ng-model="userModel.password" type="password" id="loginform-password" class="form-control">
                         <p class="help-block help-block-error">{{ error['password']}}</p>
+                    </div> -->
+
+                    <div ng-class="{ 'has-success': !error['password'] && submitted,
+                'has-error': error['password'] && submitted }" class="form-group   input-group input-group-lg field-loginform-password required">
+                      <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-asterisk" aria-hidden="true"></i></span>
+                      <input ng-model="userModel.password" type="password" id="loginform-password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+                       
                     </div>
+                    <p class="help-block help-block-error ">{{ error['password']}}</p>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" name="login-button">Login</button>
+                        <button type="submit" class=" butn btn-success" name="login-button">Login</button>
                     </div>
                 </form>
             </div>

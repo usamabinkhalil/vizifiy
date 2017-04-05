@@ -1631,3 +1631,72 @@ canvas {
     height: 100px;
     margin: 6px 0 0 6px;
 }
+.butn{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.tex_center{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.margin{
+    margin-top: 30px;
+
+    }
+
+.img_colors{
+    height: 32px;
+    display: inline-block;
+
+}
+
+.img_container{
+height: 100px;
+    height: auto;
+}
+
+.img{
+    margin: auto;
+    height: auto;
+   
+}
+.color_container{
+    margin-top: 10px;
+}
+
+.tags_prop{
+    font-size: 20px;   
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+/*font-family: OpenSans;
+font-size: 14px;
+color: #231F20;
+letter-spacing: 0;
+line-height: 20px;*/
+}
+   @media only screen and (min-width : 320px) {
+        .img_container{
+            height: 100px;
+    height: auto;
+}
+    }
+
+.clear{
+    clear: both;
+}

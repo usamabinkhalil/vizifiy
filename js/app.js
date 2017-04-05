@@ -18,6 +18,8 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
                 .when("/work", {templateUrl: "views/partials/work.html", controller: "siteController"})
                 .when("/demo", {templateUrl: "views/partials/demo.html", controller: "demoController"})
                 .when("/slider", {templateUrl: "views/partials/slider.html", controller: "siteController"})
+                .when("/uploads", {templateUrl: "views/partials/uploads.html", controller: "uploadsController"})
+                .when("/listing", {templateUrl: "views/partials/listing.html", controller: "listingController"})
                 .otherwise("/404", {templateUrl: "views/partials/404.html", controller: "siteController"});
         $httpProvider.interceptors.push('authInterceptor');
     }]);

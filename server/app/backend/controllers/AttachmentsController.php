@@ -84,6 +84,7 @@ class AttachmentsController extends ActiveController {
             $num_results = 20;
             $path . "/" . $attachments->file_encrypt_name;
             $colors = $ex->Get_Color($path . "/" . $attachments->file_encrypt_name, $num_results, $reduce_brightness, $reduce_gradients, $delta);
+
             if (is_array($colors)) {
                 foreach ($colors as $hex => $count) {
                     $colorModel = new AttachmentColors;
