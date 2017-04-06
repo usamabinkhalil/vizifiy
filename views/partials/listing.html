@@ -10,7 +10,7 @@
 						</div>					
 
 						<div class="color_container">
-							<div class="img_colors" ng-repeat="color in data.colors"  ng-style="{'background-color': color.color_code,'width':colorwidth(data.colors) }" >
+							<div class="img_colors" ng-repeat="color in data.colors"  ng-style="{'background-color': color.color_code,'width':colorwidth(data.colors[$index]) }" >
 							</div>
 							<div class="tags">
 								<div class="tags_prop" ng-repeat="tags in data.tags">{{tags.tag_code}}

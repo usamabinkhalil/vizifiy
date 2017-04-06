@@ -50,6 +50,7 @@ class AttachmentColors extends \yii\db\ActiveRecord {
             'id' => Yii::t('app', 'ID'),
             'attachment_id' => Yii::t('app', 'User ID'),
             'color_code' => Yii::t('app', 'Model ID'),
+            'color_percentage' => Yii::t('app', 'Model ID'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];

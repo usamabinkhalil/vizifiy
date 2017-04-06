@@ -15,7 +15,8 @@ class m160824_110039_attachment_colors extends Migration {
             'id' => $this->primaryKey(),
             'attachment_id' => $this->integer()->notNull()->defaultValue(0),
             'color_code' => $this->string()->notNull()->defaultValue(0),
-            'created_at' => $this->integer()->notNull(),
+/*            'color_percentage' => $this->string()->notNull()->defaultValue(0),
+*/            'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
                 ], $tableOptions);
     }

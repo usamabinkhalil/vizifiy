@@ -84,18 +84,22 @@ class AttachmentsController extends ActiveController {
             $num_results = 20;
             $path . "/" . $attachments->file_encrypt_name;
             $colors = $ex->Get_Color($path . "/" . $attachments->file_encrypt_name, $num_results, $reduce_brightness, $reduce_gradients, $delta);
-
+/*echo "<pre>";
+var_dump($colors);
+die;*/
             if (is_array($colors)) {
                 foreach ($colors as $hex => $count) {
                     $colorModel = new AttachmentColors;
                     $colorModel->attachment_id = $attachments->id;
                     $colorModel->color_code = "#" . $hex;
+                    $colorModel->color_percentage = $count ;
                     $colorModel->save();
                 }
             }
             $imageURL = \yii\helpers\Url::base(true) . '/../../../uploads/' . $attachments->file_encrypt_name;
             $ex_tags = \Yii::$app->GetTags;
             $tags = $ex_tags->Get_Tag($imageURL);
+          
             if (is_array($tags)) {
                 foreach ($tags as $tag) {
                     $tagModel = new \backend\models\AttachmentTags;
