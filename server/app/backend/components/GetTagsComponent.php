@@ -37,7 +37,7 @@ class GetTagsComponent extends Component {
      */
     function Get_Tag($image_url) {
 
-        $curl = curl_init();
+/*        $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => 'https://api.clarifai.com/v1/token/',
@@ -53,13 +53,15 @@ class GetTagsComponent extends Component {
         $access_token = json_decode($resp);
         $api_tag_url = 'https://api.clarifai.com/v1/tag/?access_token=' . $access_token->access_token . '&url=' . $image_url;
 
-        $data_json = file_get_contents($api_tag_url);
-
+        $data_json = file_get_contents($api_tag_url);*/
+/*
         if (json_decode($data_json)->status_code == 'OK') {
             return json_decode($data_json)->results[0]->result->tag->classes;
         } else {
             return FALSE;
-        }
+        }*/
+
+        return false;
     }
 
 }

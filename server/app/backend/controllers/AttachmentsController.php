@@ -84,9 +84,7 @@ class AttachmentsController extends ActiveController {
             $num_results = 20;
             $path . "/" . $attachments->file_encrypt_name;
             $colors = $ex->Get_Color($path . "/" . $attachments->file_encrypt_name, $num_results, $reduce_brightness, $reduce_gradients, $delta);
-/*echo "<pre>";
-var_dump($colors);
-die;*/
+
             if (is_array($colors)) {
                 foreach ($colors as $hex => $count) {
                     $colorModel = new AttachmentColors;
@@ -97,7 +95,7 @@ die;*/
                 }
             }
             $imageURL = \yii\helpers\Url::base(true) . '/../../../uploads/' . $attachments->file_encrypt_name;
-            $ex_tags = \Yii::$app->GetTags;
+/*            $ex_tags = \Yii::$app->GetTags;
             $tags = $ex_tags->Get_Tag($imageURL);
           
             if (is_array($tags)) {
@@ -107,9 +105,32 @@ die;*/
                     $tagModel->tag_code = $tag;
                     $tagModel->save();
                 }
-            }
+            }*/
+            $img_data = array("id"=>$attachments->id, "url"=> $imageURL);
+            return $img_data;
         }
     }
+
+    public function actionTags(){
+
+        $data = \Yii::$app->request->post();
+        $tag_id=$data["id"];
+        /*print_r($data["tags"]);*/
+/*        foreach($data["tags"] as $x ) {
+            echo  $x["name"]."and ".$x["value"];
+            echo "<br>";
+            }*/
+        if (is_array($data["tags"])) {
+            foreach ($data["tags"] as $x) {
+                $tagModel = new \backend\models\AttachmentTags;
+                $tagModel->attachment_id =  $tag_id;
+                $tagModel->tag_code = $x["name"];
+                $tagModel->tag_percentage = $x["value"];
+                $tagModel->save();
+            }
+        }
+}
+
 
     public $modelClass = 'backend\models\Attachments';
 

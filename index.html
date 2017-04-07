@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="File Uploader and extractor"/>
 
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="css/fonts/fontawesome/fonts/font-awesome.min.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet"/>
         
         <!-- Bootstrap  -->
@@ -29,9 +29,15 @@
         <div id="fh5co-page" ng-controller="siteController">
             <div ng-include='"views/header.html"'></div>
             <div ng-view></div>
-            <div ng-include='"views/footer.html"'></div>
+           <!--  <div ng-include='"views/footer.html"'></div> -->
         </div>
-
+        <script src="js/clarifai-javascript/sdk/clarifai-2.1.5.min.js"></script>
+        <script>
+  var clerifai = new Clarifai.App(
+    'BWZOC8KPAdswKgPIvnEGhnqzKfjwozC9nF2uyN1q',
+    'gGpuXaNa0ADnDP5QQLAO0iwmPYrRYXB9v9M6D2gs'
+  );
+</script>
         <!-- jQuery -->
         <script src="js/jquery.min.js"></script>
         <!-- Bootstrap -->
@@ -53,6 +59,7 @@
         <script src="js/controllers/demo/controller.js"></script>
         <script src="js/services/UploadImages.js"></script>
         <script src="js/services/authInterceptor.js"></script>
+        
     </body>
 </html>
 

@@ -30,7 +30,19 @@ app.controller('listingController', ['$scope', '$http', 'FileUploader', 'uploadI
             }
                
         }
+   /*     console.log(clerifai);*/
+clerifai.models.predict(Clarifai.GENERAL_MODEL, 'https://samples.clarifai.com/metro-north.jpg').then(
+  function(response) {
+   /* console.log(response);*/
 
+/*    var arr= response.outputs[0].data.concepts;
+    for (var data in arr) {
+        console.log(arr[data].name)
+    }*/
+  },
+  function(err) {
+    console.error(err);
+  }
+);
 
-        
     }]);

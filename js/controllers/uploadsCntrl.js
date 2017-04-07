@@ -26,9 +26,35 @@ app.controller('uploadsController', ['$scope', '$http', 'FileUploader', 'uploadI
         };
 
         $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
+            console.log(response);  
+            
             uploadImages.getImages().then(function (response) {
-                $scope.attachments = response.data;
+                $scope.attachments = response.data;           
             });
+            var img_id =response.id; /*response.url*/
+            var img_url="http://www.palmislandresortgrenadines.com/images/headers/home/001.jpg";
+            clerifai.models.predict(Clarifai.GENERAL_MODEL, img_url).then(function(response) {
+                console.log(response.outputs[0].data.concepts);
+                var tags_array= response.outputs[0].data.concepts;
+                var tags_obj={id:img_id,tags:tags_array};
+/*                for (var data in arr) {
+                    console.log(arr[data].name)
+                }*/
+                        $http({
+                              method: 'Post',
+                              url: 'server/app/backend/web/index.php?r=attachments/tags',
+                              data: tags_obj,
+                              //eaders: {'Content-Type': 'application/x-www-form-urlencoded'}
+                            }).
+                            success(function(response) {
+                                
+                            });
+            },
+              function(err) {
+                console.error(err);
+              }
+            );          
+
         };
         // FILTERS
         $scope.uploader.filters.push({
