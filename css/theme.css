@@ -1730,3 +1730,41 @@ text-align: center;
     font-size: 36px;
     margin-left: 50px;
 }
+
+.tab_heading{
+   padding: 20px 0px 10px 0px;
+    color: #231F20;
+    border-bottom: 1px solid #4A4A4A;
+}
+.tabs >li{
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+
+}
+
+.tabs >li:hover{
+cursor: pointer;
+color: black;
+}
+.tabs_container{
+    text-align:center;
+}
+
+.border{
+    border-bottom: 1px solid #D8DDD2;
+
+}
+.tag_text{
+    text-transform: uppercase;
+    color: #231F20;
+    letter-spacing: 0;
+    font-weight: bold;
+}
+
+.color_code{
+    color: white;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    min-width: 90px;
+}

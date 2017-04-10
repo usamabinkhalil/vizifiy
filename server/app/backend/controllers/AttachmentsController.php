@@ -131,6 +131,14 @@ class AttachmentsController extends ActiveController {
         }
 }
 
+public function actionGetimage(){
+   $im_id= \Yii::$app->request->get();
+    $query = Attachments::find()->where(['id' =>$im_id]);
+            return new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => false,
+        ]);
+}
 
     public $modelClass = 'backend\models\Attachments';
 
