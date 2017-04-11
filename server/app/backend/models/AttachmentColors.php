@@ -37,7 +37,7 @@ class AttachmentColors extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['id', 'color_code'], 'safe'],
+            [['id', 'color_code','color_percentage'], 'safe'],
             [['id', 'attachment_id', 'created_at', 'updated_at'], 'integer'],
         ];
     }

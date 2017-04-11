@@ -38,7 +38,7 @@ class AttachmentTags extends \yii\db\ActiveRecord {
     public function rules() {
         return [
             [['id', 'tag_code'], 'safe'],
-            [['id', 'attachment_id', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'attachment_id','tag_percentage', 'created_at', 'updated_at'], 'integer'],
         ];
     }
 
@@ -50,6 +50,7 @@ class AttachmentTags extends \yii\db\ActiveRecord {
             'id' => Yii::t('app', 'ID'),
             'attachment_id' => Yii::t('app', 'User ID'),
             'tag_code' => Yii::t('app', 'Model ID'),
+            'tag_percentage' => Yii::t('app', 'Tag Percent'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];

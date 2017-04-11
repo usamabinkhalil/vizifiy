@@ -10,4 +10,9 @@ app.controller('siteController', ['$scope', '$http', 'authInterceptor', '$rootSc
             delete $window.sessionStorage.access_token;
             $location.path('/login').replace();
         };
+
+        $scope.getpath=function(){
+        	console.log($location.path());
+        return	$location.path()
+        }
     }]);

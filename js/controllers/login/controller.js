@@ -10,7 +10,7 @@ app.controller('loginController', ['$scope', '$http', '$window', '$location',
             $http.post('server/app/frontend/web/index.php?r=api/login', $scope.userModel).success(
                     function (data) {
                         $window.sessionStorage.access_token = data.access_token;
-                        $location.path('/uploads').replace();
+                        $location.path('/').replace();
                     }).error(
                     function (data) {
                         angular.forEach(data, function (error) {

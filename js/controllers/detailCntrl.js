@@ -3,9 +3,6 @@
  */
 app.controller('detailController', ['$scope', '$http', 'FileUploader', 'uploadImages', 'authInterceptor', '$rootScope', '$window', '$location','$routeParams', function($scope, $http, FileUploader, uploadImages, authInterceptor, $rootScope, $window, $location,$routeParams) {
 
-   /* console.log($routeParams.id);*/
-           $scope.myitem=$rootScope.item;
-        console.log($scope.myitem); 
     $scope.tagwidth = function(clr_obj) {
 
         return clr_obj.tag_percentage * 100 + '%'
@@ -37,11 +34,10 @@ app.controller('detailController', ['$scope', '$http', 'FileUploader', 'uploadIm
        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 
     }).success(function(response) {
-        
         $scope.single_item=response; 
-        console.log(response);
         
     });
 
+    console.log($location.path());
 
 }]);
