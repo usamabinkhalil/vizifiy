@@ -36,6 +36,7 @@ angular.module('fblindSimpleImageGallery', [])
                                         $scope.images = newValue;
                                         $rootScope.colors = newValue[0].colors;
                                         $rootScope.tags = newValue[0].tags;
+                                      
                                     }
                                 });
                             }

@@ -26,30 +26,39 @@ app.controller('uploadsController', ['$scope', '$http', 'FileUploader', 'uploadI
         };
 
         $scope.uploader.onSuccessItem = function (fileItem, response, status, headers) {
-            console.log(response);  
+           /* console.log(response);  */
             
             uploadImages.getImages().then(function (response) {
                 $scope.attachments = response.data;           
             });
             var img_id =response.id; /*response.url*/
-            var img_url="http://www.palmislandresortgrenadines.com/images/headers/home/001.jpg";
+            var img_url="https://images6.alphacoders.com/412/412086.jpg";
             clerifai.models.predict(Clarifai.GENERAL_MODEL, img_url).then(function(response) {
-                console.log(response.outputs[0].data.concepts);
+                /*console.log(response.outputs[0].data.concepts);*/
+                
                 var tags_array= response.outputs[0].data.concepts;
                 var tags_obj={id:img_id,tags:tags_array};
-/*                for (var data in arr) {
-                    console.log(arr[data].name)
+               
+
+/*                for (var data in tags_array) {
+
+                    console.log(tags_array[data].name)
                 }*/
                         $http({
                               method: 'Post',
                               url: 'server/app/backend/web/index.php?r=attachments/tags',
                               data: tags_obj,
-                              //eaders: {'Content-Type': 'application/x-www-form-urlencoded'}
+                              headers: {'Content-Type': 'application/json'}
                             }).
                             success(function(response) {
-                                
+                                 uploadImages.getImages().then(function (response) {
+                                $rootScope.attachments = response.data;
+        });
+/*                                var parsed=JSON.parse(response);
+                                $rootScope.tags=parsed;
+                                console.log(parsed);*/
                             });
-            },
+                },
               function(err) {
                 console.error(err);
               }

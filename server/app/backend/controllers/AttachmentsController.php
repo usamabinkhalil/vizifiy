@@ -115,11 +115,13 @@ class AttachmentsController extends ActiveController {
 
         $data = \Yii::$app->request->post();
         $tag_id=$data["id"];
-        /*print_r($data["tags"]);*/
+        // var_dump($data);
+       /* var_dump($data);die;*/
 /*        foreach($data["tags"] as $x ) {
             echo  $x["name"]."and ".$x["value"];
             echo "<br>";
             }*/
+        $res=$data["tags"];
         if (is_array($data["tags"])) {
             foreach ($data["tags"] as $x) {
                 $tagModel = new \backend\models\AttachmentTags;
@@ -127,7 +129,14 @@ class AttachmentsController extends ActiveController {
                 $tagModel->tag_code = $x["name"];
                 $tagModel->tag_percentage = $x["value"];
                 $tagModel->save();
+               /* array_push($res[$data]['tag_code'],$x["name"]);*/
+/*                if(!$tagModel->save()){
+                    print_r($tagModel->errors);
+                }*/
+                
             }
+            
+            return  json_encode($res);
         }
 }
 
@@ -138,6 +147,11 @@ public function actionGetimage(){
             'query' => $query,
             'pagination' => false,
         ]);
+}
+
+public function actionRedirect(){
+
+        header("Location: http://localhost/vizifiy/#/");
 }
 
     public $modelClass = 'backend\models\Attachments';

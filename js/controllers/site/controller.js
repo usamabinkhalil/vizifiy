@@ -12,7 +12,7 @@ app.controller('siteController', ['$scope', '$http', 'authInterceptor', '$rootSc
         };
 
         $scope.getpath=function(){
-        	console.log($location.path());
+            
         return	$location.path()
         }
     }]);

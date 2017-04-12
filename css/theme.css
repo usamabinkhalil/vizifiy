@@ -1779,3 +1779,8 @@ color: black;
     padding-left: 10px;
     min-width: 90px;
 }
+
+.img_center{
+
+    margin: auto;
+}
